@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello
+
+{% endblock %}
+
+{% block body %}
+
+	<section class="produits">
+		{% for produit in produits %}
+
+			<table class="table">
+				<tr>
+					<th rowspan="4"><img class="image" src="------------" alt="image de produit"></th>
+					<td class="titre">{{produit.nom}}</td>
+				</tr>
+				<tr>
+					<td class="prix">{{produit.prix}}</td>
+				</tr>
+				<tr>
+					<td>
+						<hr>
+						<ul *ngFor="let description of produit.description">
+							<li class="desc">{{produit.description}}</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<input class="bouton" type="button" value="Add to Panier">
+					<input class="bouton" type="button" value="En savoir plus">
+					<a href="{{path('blog_show', {'id': produit.id})}}" class "btn btn-primary">En savoir plus</a>
+
+				</tr>
+			</table>
+		{% endfor %}
+
+	</section>
+{% endblock %}
