@@ -11,11 +11,17 @@
 
 			<table class="table">
 				<tr>
-					<th rowspan="4"><img class="image" src="------------" alt="image de produit"></th>
+					<th rowspan="4"><img class="image" src="{{produit.image}}" alt="image de produit"></th>
 					<td class="titre">{{produit.nom}}</td>
 				</tr>
 				<tr>
 					<td class="prix">{{produit.prix}}</td>
+				</tr>
+				<tr>
+					<td class="categorie">{{produit.categorie.titre}}</td>
+				</tr>
+				<tr>
+					<td class="type">{{produit.type.titre}}</td>
 				</tr>
 				<tr>
 					<td>
@@ -31,6 +37,7 @@
 					<a href="{{path('blog_show', {'id': produit.id})}}" class "btn btn-primary">En savoir plus</a>
 
 				</tr>
+
 			</table>
 		{% endfor %}
 

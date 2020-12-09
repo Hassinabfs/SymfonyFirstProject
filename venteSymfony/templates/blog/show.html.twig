@@ -5,11 +5,17 @@
 
 		<table class="table">
 			<tr>
-				<th rowspan="4"><img class="image" src="------------" alt="image de produit"></th>
+				<th rowspan="4"><img class="image" src="{{produit.image}}" alt="image de produit"></th>
 				<td class="titre">{{produit.nom}}</td>
 			</tr>
 			<tr>
 				<td class="prix">{{produit.prix}}</td>
+			</tr>
+			<tr>
+				<td class="prix">{{produit.categorie.titre}}</td>
+			</tr>
+			<tr>
+				<td class="prix">{{produit.type.titre}}</td>
 			</tr>
 			<tr>
 				<td>
@@ -20,7 +26,18 @@
 				</td>
 			</tr>
 		</table>
+		{% for comment in produit.comments %}
+			<div class="comment">
+				<div class="row">
+					<div class="col-3">{{comment.author}}(<small>{{comment.createAt | date ('d/m/y a H:i')}}</small>)
+					</div>
+					<div class="col">
+						{{comment.content | raw}}
+					</div>
+				</div>
 
+			</div>
+		{% endfor %}
 
 	</section>
 

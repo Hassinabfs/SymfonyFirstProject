@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Produit;
+use App\Entity\Type;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,8 +53,14 @@ class BlogController extends AbstractController
             ->add('nom')
             ->add('prix')
             ->add('image')
-            ->add('categorie')
-            ->add('type')
+            ->add('categorie', EntityType::class, [
+                'class' => Categorie::class,
+                'choice_label' => 'titre'
+            ])
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'choice_label' => 'titre'
+            ])
             ->add('description')
             ->add('description_detaille')
             ->getForm();
