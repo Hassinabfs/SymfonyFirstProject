@@ -32,10 +32,10 @@
 					</td>
 				</tr>
 				<tr>
-					<input class="bouton" type="button" value="Add to Panier">
-					<input class="bouton" type="button" value="En savoir plus">
-					<a href="{{path('blog_show', {'id': produit.id})}}" class "btn btn-primary">En savoir plus</a>
 
+
+					<a href="{{ path('blog_show', {'id': produit.id})}}" class "btn btn-primary">En savoir plus</a>
+					<a href="{{ path('panier_add', {'id': produit.id})}}" class "btn btn-success float-right">Ajouter</a>
 				</tr>
 
 			</table>

@@ -104,4 +104,9 @@ class User implements UserInterface
         // see section on salt below
         return null;
     }
+
+    public function __toString()
+    {
+        return $this->email;
+    }
 }
