@@ -32,17 +32,17 @@ class PanierController extends AbstractController
 
         //ajouter une boucle pour calculer le total
 
-        // $total = 0;
+        $total = 0;
 
-        //foreach ($panierWithData as $item) {
+        foreach ($panierWithData as $item) {
 
-        //  $totalItem = $item['produit']->getPrix() * $item['quantity'];
-        //  $total += $totalItem;
-        // }
+            $totalItem = $item['produit']->getPrix() * $item['quantity'];
+            $total += $totalItem;
+        }
 
         return $this->render('panier/index.html.twig', [
             'items' => $panierWithData,
-            // 'total' => $total,
+            'total' => $total,
         ]);
     }
 

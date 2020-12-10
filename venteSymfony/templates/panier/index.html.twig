@@ -23,7 +23,7 @@
 						<td>{{ item.produit.nom}}</td>
 						<td>{{ item.produit.prix }}</td>
 						<td>{{ item.quantity }}</td>
-
+						<td>{{ item.quantity * item.produit.prix }}</td>
 						<td>
 							<a href="{{ path('panier_remove' ,{'id': item.produit.id})}}" class="btn btn-danger sm">
 								<i class="fas fa-trash"></i>
@@ -33,6 +33,13 @@
 
 				{% endfor %}
 			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" class="text-right">Total:</td>
+					<td>{{ total }}</td>
+					<td></td>
+				</tr>
+			</tfoot>
 
 
 		</table>
