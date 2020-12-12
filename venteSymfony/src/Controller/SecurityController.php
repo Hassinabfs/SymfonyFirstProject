@@ -12,13 +12,19 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+
 class SecurityController extends AbstractController
+
 {
     /**
      * @Route("/inscription", name="security_inscription")
      */
-    public function inscription(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
-    {
+    public function inscription(
+        Request $request,
+        EntityManagerInterface $manager,
+        UserPasswordEncoderInterface $encoder
+    ) {
+
         // creer un user pour montrer a quel objet on reli le conteni du formulaire
         $user = new User();
 
@@ -50,6 +56,7 @@ class SecurityController extends AbstractController
 
         ]);
     }
+
 
 
     /**

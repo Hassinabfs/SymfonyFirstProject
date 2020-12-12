@@ -5,41 +5,44 @@
 {% endblock %}
 
 {% block body %}
+	<div class="bg-light p-3">
+		<h1>Les produits</h1>
+	</div>
 
-	<section class="produits">
+	<div class="row">
 		{% for produit in produits %}
+			<div class="col-4 mt-4">
+				<div class="border border-dark rounded p-2 clearfix">
+					<h4>
+						{{ produit.nom }}<br>
 
-			<table class="table">
-				<tr>
-					<th rowspan="4"><img class="image" src="{{produit.image}}" alt="image de produit"></th>
-					<td class="titre">{{produit.nom}}</td>
-				</tr>
-				<tr>
-					<td class="prix">{{produit.prix}}</td>
-				</tr>
-				<tr>
-					<td class="categorie">{{produit.categorie.titre}}</td>
-				</tr>
-				<tr>
-					<td class="type">{{produit.type.titre}}</td>
-				</tr>
-				<tr>
-					<td>
-						<hr>
-						<ul *ngFor="let description of produit.description">
-							<li class="desc">{{produit.description}}</li>
-						</ul>
-					</td>
-				</tr>
-				<tr>
+						{{ produit.categorie.titre }}
 
 
-					<a href="{{ path('blog_show', {'id': produit.id})}}" class "btn btn-primary">En savoir plus</a>
-					<a href="{{ path('panier_add', {'id': produit.id})}}" class "btn btn-success float-right">Ajouter</a>
-				</tr>
+					</h4>
+					<img class="img-fluid rounded" src="{{ produit.image }}" alt="Image de {{ produit.nom }}">
+					<h5>
 
-			</table>
+						{{ produit.type.titre }}
+						<br>
+						{{ produit.prix }}
+						€
+
+					</h5>
+					<hr>
+					<a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success float-right">
+						<i class="fas fa-shopping-cart mr-1"></i>
+						Acheter
+					</a>
+					<a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success float-left">
+						<i class="fas fa-shopping-cart mr-1"></i>
+						En savoir plus
+					</a>
+
+				</div>
+
+			</div>
 		{% endfor %}
+	</div>
 
-	</section>
 {% endblock %}

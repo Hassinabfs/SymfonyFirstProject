@@ -16,8 +16,10 @@ class InscriptionType extends AbstractType
             ->add('email')
             ->add('username')
             ->add('password', PasswordType::class)
-            ->add('confirm_password');
+            ->add('confirm_password', PasswordType::class);
     }
+
+
 
     public function configureOptions(OptionsResolver $resolver)
     {

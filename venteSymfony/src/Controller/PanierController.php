@@ -9,10 +9,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class PanierController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/panier", name="panier")
      */
     public function index(SessionInterface $session, ProduitRepository $produitRepository): Response
@@ -48,6 +50,7 @@ class PanierController extends AbstractController
 
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/panier/add/{id}", name="panier_add")
      */
     public function add($id, SessionInterface $session)
@@ -66,15 +69,16 @@ class PanierController extends AbstractController
         }
 
 
-
-
         //ajouter le panier dans la session
         $session->set('panier', $panier);
 
-        dd($session->get('panier'));
+        return $this->redirectToRoute("panier");
+
+        //dd($session->get('panier'));
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/panier/remove/{id}", name="panier_remove")
      */
     public function remove($id, SessionInterface $session)

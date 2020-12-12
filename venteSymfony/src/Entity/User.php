@@ -9,6 +9,10 @@ use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+
+
+
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(
@@ -46,6 +50,12 @@ class User implements UserInterface
      * @Assert\EqualTo(propertyPath="password", message="Le mot de passe doit etre le meme")
      */
     public $confirm_password;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
 
     public function getId(): ?int
     {
@@ -89,9 +99,19 @@ class User implements UserInterface
     }
 
 
-    public function getRoles()
+    public function getRoles(): array
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+
+        $lroes[] = 'ROLE_USER';
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function eraseCredentials()
@@ -104,6 +124,8 @@ class User implements UserInterface
         // see section on salt below
         return null;
     }
+
+
 
     public function __toString()
     {

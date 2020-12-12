@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Username</th>
+				<th>Action</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.id}}</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.username }}</td>
+
+					<td>
+						<a href="{{ path('panier_remove' ,{'id': item.produit.id})}}" class="btn btn-danger sm">
+							<i class="fas fa-trash"></i>
+						</a>
+					</td>
+				</tr>
+
+			{% endfor %}
+		</tbody>
+
+
+	</table>
+
+
+{% endblock %}
