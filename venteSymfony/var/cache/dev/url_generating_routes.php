@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin_index' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin']], [], []],
     'admin_user' => [[], ['_controller' => 'App\\Controller\\AdminController::usersList'], [], [['text', '/admin/users']], [], []],
+    'admin_userEdit' => [['id'], ['_controller' => 'App\\Controller\\AdminController::usersEdit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/users/edit']], [], []],
     'blog' => [[], ['_controller' => 'App\\Controller\\BlogController::index'], [], [['text', '/blog']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\BlogController::home'], [], [['text', '/']], [], []],
     'blog_ajout' => [[], ['_controller' => 'App\\Controller\\BlogController::AMProduit'], [], [['text', '/blog/new']], [], []],

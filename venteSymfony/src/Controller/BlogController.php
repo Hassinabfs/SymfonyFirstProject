@@ -42,6 +42,8 @@ class BlogController extends AbstractController
      * @Route("/blog/new",name="blog_ajout")
      * @Route("/blog/{id}/edit",name="blog_edit")
      */
+
+     // Ajout modifier produit
     public function AMProduit(Produit $produit = null, Request $request, EntityManagerInterface $manager)
     {
         if (!$produit) {
