@@ -35,23 +35,18 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('panier')}}">Cart</a>
 						</li>
+
+
+                        {% if app.user.roles[0]=='ROLE_ADMIN' %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('admin_user')}}">Users</a>
+                            </li>
                         {% endif %}
-						</ul>
-                        
-                        
-                        
-                        
-                        <ul>
-                            <div class="shenasname">
-                                Project: MEAN stack technology <br>
-                                Cours: Technologies avancées du web <br>
-                                Professor: Pierre POMPIDOR <br>
-                                By: <b>Hassina</b> BOUFATIS and <b>Amir</b> SHIRALI POUR <br>
-                            </div>
-                        </ul>
+                        {% endif %}
+                    </ul>
 
 
-                        <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto">
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -65,25 +60,12 @@
 								<a class="nav-link" href="{{ path('security_logout')}}">Logout</a>
 							</li>
 						{% endif %}
-
-
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('blog_ajout')}}">Ajout</a>
-						</li>
-
-
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('admin_user')}}">Membres</a>
-						</li>
-
-
-					</ul>
+                    </ul>
 				</div>
-			</body>
-		</body>
-	</html>
-</nav>
-<div class="container"> {% block body %}{% endblock %}
-	</div>
-	{% block javascripts %}{% endblock %}
-</body></html>
+            </nav>
+        <div class="container"> 
+            {% block body %}{% endblock %}
+        </div>
+	    {% block javascripts %}{% endblock %}
+    </body>
+</html>
