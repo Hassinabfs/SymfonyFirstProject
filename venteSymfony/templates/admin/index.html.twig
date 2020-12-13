@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!
+{% block title %}Liste des utilisateurs
 {% endblock %}
 
 {% block body %}
@@ -12,6 +12,7 @@
 				<th>ID</th>
 				<th>Email</th>
 				<th>Username</th>
+				<th>Roles</th>
 				<th>Action</th>
 
 			</tr>
@@ -22,6 +23,19 @@
 					<td>{{ user.id}}</td>
 					<td>{{ user.email }}</td>
 					<td>{{ user.username }}</td>
+					<td>
+						{% for role in user.roles %}
+							{% if role == "ROLE_ADMIN" %}
+								Administrateur
+							{% else %}
+								utilisateur
+							{% endif %}
+
+						{% endfor %}
+					</td>
+					<td>
+						<a href="{{ path('admin_userEdit', {'id': user.id})}}" class="btn btn-warning">Modifier</a>
+					</td>
 
 				</tr>
 
