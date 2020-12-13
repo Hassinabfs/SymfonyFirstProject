@@ -1,7 +1,30 @@
 {% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/assets/css/home.css') }}">
+{% endblock %}
+
+
 {% block body  %}
 
 
-<h1> Bienvenue dans l'application</h1>
-<p> ffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+<div class="row img">
+    <div class="bg-text column">
+    {# <h1 style="font-size:50px">I am Hassina BOUFATIS</h1>
+    <h2>And I'm a Symfony designer</h2> #}
+    <img class="bg-image" src="{{ asset('/assets/image/hassina-buissiness-card.jpg') }}" style="width:100%">
+    </div>
+
+    <div class="bg-text column">
+    {# <h1 style="font-size:50px">I am Amir SHIRALI POUR</h1>
+    <h2>And I'm a Symfony designer</h2> #}
+    <img class="bg-image" src="{{ asset('/assets/image/Amir-buissiness-card.jpg') }}" style="width:100%">
+    </div>
+    
+</div>
+
+
+
+
 {% endblock body  %}

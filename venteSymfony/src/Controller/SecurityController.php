@@ -50,11 +50,7 @@ class SecurityController extends AbstractController
         }
 
 
-        return $this->render('security/inscription.html.twig', [
-            'form' => $form->createView()
-            // dans la liste on lui passe les variables qu'on veut qi'il affiche
-
-        ]);
+        return $this->render('security/login.html.twig');
     }
 
 
