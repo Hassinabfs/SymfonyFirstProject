@@ -26,9 +26,6 @@
 							<a class="nav-link" href="{{ path('blog')}}">Produits</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('blog_ajout')}}">Ajout</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="{{ path('panier')}}">Panier</a>
 						</li>
 
@@ -41,6 +38,18 @@
 								<a class="nav-link" href="{{ path('security_logout')}}">Deconnexion</a>
 							</li>
 						{% endif %}
+
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('blog_ajout')}}">Ajout</a>
+						</li>
+
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('admin_user')}}">Membres</a>
+						</li>
+
+
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -48,9 +57,11 @@
 					</form>
 
 				</div>
-			</nav>
-			<div class="container"> {% block body %}{% endblock %}
-				</div>
-				{% block javascripts %}{% endblock %}
 			</body>
-		</html>
+		</body>
+	</html>
+</nav>
+<div class="container"> {% block body %}{% endblock %}
+	</div>
+	{% block javascripts %}{% endblock %}
+</body></html>
