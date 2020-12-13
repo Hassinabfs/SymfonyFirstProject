@@ -1291,3 +1291,5 @@ f59ecd,127.0.0.1,POST,http://localhost:8000/connexion,1607891903,,302
 0bdf96,127.0.0.1,GET,http://localhost:8000/,1607891903,,200
 68972d,127.0.0.1,GET,http://localhost:8000/blog/new,1607891915,cd3bab,403
 cd3bab,127.0.0.1,GET,http://localhost:8000/blog/new,1607891915,,403
+379a6b,127.0.0.1,GET,http://localhost:8000/,1607892770,,200
+6094ed,127.0.0.1,GET,http://localhost:8000/,1607892774,,200
