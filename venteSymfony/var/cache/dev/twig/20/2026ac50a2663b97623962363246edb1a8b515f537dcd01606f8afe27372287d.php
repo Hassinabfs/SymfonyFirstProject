@@ -212,6 +212,6 @@ class __TwigTemplate_7914ab39055dfc3eefa292e955a320974e5d9bba5e116e9d389944ae7c4
 \t</section>
 
 {% endblock %}
-", "blog/show.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/blog/show.html.twig");
+", "blog/show.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/blog/show.html.twig");
     }
 }

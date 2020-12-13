@@ -102,6 +102,6 @@ class __TwigTemplate_9a0d1d0f14b7ed675a600c5fdb3bc4ba68176b94e10ba64b2648de27b2c
     {% if link|default(false) %}</a>{% endif %}
         <div class=\"sf-toolbar-info\">{{ text|default('') }}</div>
 </div>
-", "@WebProfiler/Profiler/toolbar_item.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
+", "@WebProfiler/Profiler/toolbar_item.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
     }
 }

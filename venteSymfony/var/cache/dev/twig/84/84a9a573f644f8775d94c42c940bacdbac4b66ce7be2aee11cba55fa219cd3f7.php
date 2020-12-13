@@ -65,7 +65,7 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello AdminController!
+        echo "Liste des utilisateurs
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -94,30 +94,63 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
 \t\t\t\t<th>ID</th>
 \t\t\t\t<th>Email</th>
 \t\t\t\t<th>Username</th>
+\t\t\t\t<th>Roles</th>
 \t\t\t\t<th>Action</th>
 
 \t\t\t</tr>
 \t\t</thead>
 \t\t<tbody>
 \t\t\t";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 21
+            // line 22
             echo "\t\t\t\t<tr>
 \t\t\t\t\t<td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-\t\t\t\t\t<td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
 \t\t\t\t\t<td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
+\t\t\t\t\t<td>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t";
+            // line 27
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 27));
+            foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+                // line 28
+                echo "\t\t\t\t\t\t\t";
+                if ((0 === twig_compare($context["role"], "ROLE_ADMIN"))) {
+                    // line 29
+                    echo "\t\t\t\t\t\t\t\tAdministrateur
+\t\t\t\t\t\t\t";
+                } else {
+                    // line 31
+                    echo "\t\t\t\t\t\t\t\tutilisateur
+\t\t\t\t\t\t\t";
+                }
+                // line 33
+                echo "
+\t\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 35
+            echo "\t\t\t\t\t</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"";
+            // line 37
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_userEdit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            echo "\" class=\"btn btn-warning\">Modifier</a>
+\t\t\t\t\t</td>
 
 \t\t\t\t</tr>
 
@@ -126,7 +159,7 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 43
         echo "\t\t</tbody>
 
 
@@ -154,14 +187,14 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
 
     public function getDebugInfo()
     {
-        return array (  130 => 29,  119 => 24,  115 => 23,  111 => 22,  108 => 21,  104 => 20,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  163 => 43,  151 => 37,  147 => 35,  140 => 33,  136 => 31,  132 => 29,  129 => 28,  125 => 27,  120 => 25,  116 => 24,  112 => 23,  109 => 22,  105 => 21,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!
+{% block title %}Liste des utilisateurs
 {% endblock %}
 
 {% block body %}
@@ -173,6 +206,7 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
 \t\t\t\t<th>ID</th>
 \t\t\t\t<th>Email</th>
 \t\t\t\t<th>Username</th>
+\t\t\t\t<th>Roles</th>
 \t\t\t\t<th>Action</th>
 
 \t\t\t</tr>
@@ -183,6 +217,19 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
 \t\t\t\t\t<td>{{ user.id}}</td>
 \t\t\t\t\t<td>{{ user.email }}</td>
 \t\t\t\t\t<td>{{ user.username }}</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t{% for role in user.roles %}
+\t\t\t\t\t\t\t{% if role == \"ROLE_ADMIN\" %}
+\t\t\t\t\t\t\t\tAdministrateur
+\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\tutilisateur
+\t\t\t\t\t\t\t{% endif %}
+
+\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t</td>
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"{{ path('admin_userEdit', {'id': user.id})}}\" class=\"btn btn-warning\">Modifier</a>
+\t\t\t\t\t</td>
 
 \t\t\t\t</tr>
 
@@ -194,6 +241,6 @@ class __TwigTemplate_99b3efbb0b2af6fce09404e9df92802a51f65cace7ca1a168e14aac2e3b
 
 
 {% endblock %}
-", "admin/index.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/admin/index.html.twig");
+", "admin/index.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/admin/index.html.twig");
     }
 }

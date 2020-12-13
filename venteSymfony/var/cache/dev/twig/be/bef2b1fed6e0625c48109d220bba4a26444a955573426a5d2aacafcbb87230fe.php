@@ -67,7 +67,7 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 4
-        echo "<link rel=\"stylesheet\" href=\"";
+        echo "\t<link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/assets/css/products.css"), "html", null, true);
         echo "\">
 ";
@@ -128,46 +128,55 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
 \t\t\t\t\t\t";
             // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "categorie", [], "any", false, false, false, 22), "titre", [], "any", false, false, false, 22), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 22), "html", null, true);
+            echo "
+\t\t\t\t\t\t";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 23), "html", null, true);
             echo "
 
 
 \t\t\t\t\t</h4>
 \t\t\t\t\t<img class=\"img-fluid rounded product\" src=\"";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 26), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 27), "html", null, true);
             echo "\" alt=\"Image de ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 27), "html", null, true);
             echo "\">
 \t\t\t\t\t<h5>
 
 \t\t\t\t\t\t";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "type", [], "any", false, false, false, 29), "titre", [], "any", false, false, false, 29), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["produit"], "type", [], "any", false, false, false, 30), "titre", [], "any", false, false, false, 30), "html", null, true);
             echo "
 \t\t\t\t\t\t<br>
 \t\t\t\t\t\t";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 31), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 32), "html", null, true);
             echo "
 \t\t\t\t\t\t€
 
 \t\t\t\t\t</h5>
 \t\t\t\t\t<hr>
 \t\t\t\t\t<a href=\"";
-            // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier_add", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier_add", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 37)]), "html", null, true);
             echo "\" class=\"btn btn-success float-right\">
 \t\t\t\t\t\t<i class=\"fas fa-shopping-cart mr-1\"></i>
 \t\t\t\t\t\tAdd
 \t\t\t\t\t</a>
 \t\t\t\t\t<a href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 40)]), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 41)]), "html", null, true);
             echo "\" class=\"btn btn-success float-left\">
 \t\t\t\t\t\t<i class=\"fas fa-shopping-cart mr-1\"></i>
 \t\t\t\t\t\tDetails
+\t\t\t\t\t</a>
+\t\t\t\t\t<a href=\"";
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            echo "\" class=\"btn btn-success float-left\">
+\t\t\t\t\t\t<i class=\"fas fa-shopping-cart mr-1\"></i>
+\t\t\t\t\t\tdelete
 \t\t\t\t\t</a>
 
 \t\t\t\t</div>
@@ -178,7 +187,7 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 54
         echo "\t</div>
 
 ";
@@ -202,7 +211,7 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
 
     public function getDebugInfo()
     {
-        return array (  182 => 49,  167 => 40,  160 => 36,  152 => 31,  147 => 29,  139 => 26,  130 => 22,  125 => 19,  121 => 18,  114 => 13,  104 => 12,  83 => 8,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  191 => 54,  176 => 45,  169 => 41,  162 => 37,  154 => 32,  149 => 30,  141 => 27,  134 => 23,  130 => 22,  125 => 19,  121 => 18,  114 => 13,  104 => 12,  83 => 8,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -210,7 +219,7 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
         return new Source("{% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel=\"stylesheet\" href=\"{{ asset('/assets/css/products.css') }}\">
+\t<link rel=\"stylesheet\" href=\"{{ asset('/assets/css/products.css') }}\">
 {% endblock %}
 
 
@@ -228,7 +237,8 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
 \t\t\t<div class=\"col-4 mt-4\">
 \t\t\t\t<div class=\"border border-dark rounded p-2 clearfix pane\">
 \t\t\t\t\t<h4>
-\t\t\t\t\t\t{{ produit.categorie.titre }} {{ produit.nom }}
+\t\t\t\t\t\t{{ produit.categorie.titre }}
+\t\t\t\t\t\t{{ produit.nom }}
 
 
 \t\t\t\t\t</h4>
@@ -250,6 +260,10 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
 \t\t\t\t\t\t<i class=\"fas fa-shopping-cart mr-1\"></i>
 \t\t\t\t\t\tDetails
 \t\t\t\t\t</a>
+\t\t\t\t\t<a href=\"{{ path('blog_delete', {'id': produit.id})}}\" class=\"btn btn-success float-left\">
+\t\t\t\t\t\t<i class=\"fas fa-shopping-cart mr-1\"></i>
+\t\t\t\t\t\tdelete
+\t\t\t\t\t</a>
 
 \t\t\t\t</div>
 
@@ -258,6 +272,6 @@ class __TwigTemplate_5ca54fd71f9bff55a0e22afb0437c0c69d8fb52d063344d25e110c282d0
 \t</div>
 
 {% endblock %}
-", "blog/index.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/blog/index.html.twig");
+", "blog/index.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/blog/index.html.twig");
     }
 }

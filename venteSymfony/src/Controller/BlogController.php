@@ -12,6 +12,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+
+
+
 
 class BlogController extends AbstractController
 {
@@ -88,6 +93,7 @@ class BlogController extends AbstractController
             'editMode' => $produit->getId() !== null
         ]);
     }
+
     /**
      * @Route("/blog/{id}",name="blog_show")
      */
@@ -98,5 +104,25 @@ class BlogController extends AbstractController
         return $this->render('blog/show.html.twig', [
             'produit' => $produit
         ]);
+    }
+
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/blog/delete/{id}",name="blog_delete")
+     * @Method({"DELETE"})
+     */
+    public function delete(Request $request, $id)
+    {
+        $produit = $this->getDoctrine()->getRepository(Produit::class)->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($produit);
+        $entityManager->flush();
+
+        $response = new Response();
+        $response->send();
+
+        return $this->redirectToRoute('blog');
     }
 }

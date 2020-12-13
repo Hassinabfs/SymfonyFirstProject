@@ -60,39 +60,39 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
         // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 12
-        echo "        <link rel=\"stylesheet\" href=\"assets/css/base.css\">
+        echo "\t\t<link rel=\"stylesheet\" href=\"assets/css/base.css\">
 
-\t\t</head>
-\t\t<body>
-\t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-                <img src=\"";
+\t</head>
+\t<body>
+\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+\t\t\t<img src=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/image/symfony.png"), "html", null, true);
         echo "\" width=\"50\" height=\"50\">
-\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-\t\t\t\t</button>
+\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
+\t\t\t</button>
 
-\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
-\t\t\t\t\t<ul class=\"navbar-nav mr-auto\">
+\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
+\t\t\t\t<ul class=\"navbar-nav mr-auto\">
 
-\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
         // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Home</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
         // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         echo "\">Products</a>
-\t\t\t\t\t\t</li>
-                        ";
+\t\t\t\t\t</li>
+\t\t\t\t\t";
         // line 31
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
             // line 32
-            echo "                        <li class=\"nav-item\">
+            echo "\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
             // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_ajout");
@@ -104,65 +104,68 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
             echo "\">Cart</a>
 \t\t\t\t\t\t</li>
-                        ";
-        }
-        // line 39
-        echo "\t\t\t\t\t\t</ul>
-                        
-                        
-                        
-                        
-                        <ul>
-                            <div class=\"shenasname\">
-                                Project: MEAN stack technology <br>
-                                Cours: Technologies avancées du web <br>
-                                Professor: Pierre POMPIDOR <br>
-                                By: <b>Hassina</b> BOUFATIS and <b>Amir</b> SHIRALI POUR <br>
-                            </div>
-                        </ul>
 
 
-                        <ul class=\"navbar-nav ml-auto\">
-                        <form class=\"form-inline my-2 my-lg-0\">
-                            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-                            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-                        </form>
 \t\t\t\t\t\t";
-        // line 59
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59)) {
-            // line 60
-            echo "\t\t\t\t\t\t\t<li class=\"nav-item\">
+            // line 40
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "user", [], "any", false, false, false, 40), "roles", [], "any", false, false, false, 40), 0, [], "array", false, false, false, 40), "ROLE_ADMIN"))) {
+                // line 41
+                echo "\t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
-            // line 61
+                // line 42
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user");
+                echo "\">Users</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t";
+            }
+            // line 45
+            echo "\t\t\t\t\t";
+        }
+        // line 46
+        echo "\t\t\t\t</ul>
+
+
+\t\t\t\t<ul class=\"navbar-nav ml-auto\">
+\t\t\t\t\t<form class=\"form-inline my-2 my-lg-0\">
+\t\t\t\t\t\t<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
+\t\t\t\t\t\t<button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+\t\t\t\t\t</form>
+\t\t\t\t\t";
+        // line 54
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54)) {
+            // line 55
+            echo "\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+            // line 56
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
             echo "\">Login</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t";
+\t\t\t\t\t\t</li>
+\t\t\t\t\t";
         } else {
-            // line 64
-            echo "\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
-            // line 65
+            // line 59
+            echo "\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+            // line 60
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
             echo "\">Logout</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t";
+\t\t\t\t\t\t</li>
+\t\t\t\t\t";
         }
-        // line 68
-        echo "\t\t\t\t\t</ul>
-\t\t\t\t</div>
-\t\t\t</nav>
-\t\t\t<div class=\"container\"> ";
-        // line 71
+        // line 63
+        echo "\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</nav>
+\t\t<div class=\"container\"> ";
+        // line 66
         $this->displayBlock('body', $context, $blocks);
-        // line 72
-        echo "\t\t\t\t</div>
-\t\t\t\t";
-        // line 73
+        // line 67
+        echo "\t\t\t</div>
+\t\t\t";
+        // line 68
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 74
-        echo "\t\t\t</body>
-\t\t</html>
+        // line 69
+        echo "\t\t</body>
+\t</html>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -210,7 +213,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     }
 
-    // line 71
+    // line 66
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -228,7 +231,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     }
 
-    // line 73
+    // line 68
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -258,7 +261,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     public function getDebugInfo()
     {
-        return array (  232 => 73,  214 => 71,  196 => 11,  176 => 6,  164 => 74,  162 => 73,  159 => 72,  157 => 71,  152 => 68,  146 => 65,  143 => 64,  137 => 61,  134 => 60,  132 => 59,  110 => 39,  104 => 36,  98 => 33,  95 => 32,  93 => 31,  88 => 29,  82 => 26,  70 => 17,  63 => 12,  61 => 11,  56 => 8,  54 => 6,  47 => 1,);
+        return array (  235 => 68,  217 => 66,  199 => 11,  179 => 6,  167 => 69,  165 => 68,  162 => 67,  160 => 66,  155 => 63,  149 => 60,  146 => 59,  140 => 56,  137 => 55,  135 => 54,  125 => 46,  122 => 45,  116 => 42,  113 => 41,  111 => 40,  104 => 36,  98 => 33,  95 => 32,  93 => 31,  88 => 29,  82 => 26,  70 => 17,  63 => 12,  61 => 11,  56 => 8,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -274,70 +277,65 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
 
 \t\t<link rel=\"stylesheet\" href=\"https://bootswatch.com/4/flatly/bootstrap.min.css\"> {% block stylesheets %}{% endblock %}
-        <link rel=\"stylesheet\" href=\"assets/css/base.css\">
+\t\t<link rel=\"stylesheet\" href=\"assets/css/base.css\">
 
-\t\t</head>
-\t\t<body>
-\t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-                <img src=\"{{ asset('assets/image/symfony.png') }}\" width=\"50\" height=\"50\">
-\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-\t\t\t\t</button>
+\t</head>
+\t<body>
+\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+\t\t\t<img src=\"{{ asset('assets/image/symfony.png') }}\" width=\"50\" height=\"50\">
+\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
+\t\t\t</button>
 
-\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
-\t\t\t\t\t<ul class=\"navbar-nav mr-auto\">
+\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
+\t\t\t\t<ul class=\"navbar-nav mr-auto\">
 
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('home')}}\">Home</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('blog')}}\">Products</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t{% if app.user %}
 \t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('home')}}\">Home</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('blog')}}\">Products</a>
-\t\t\t\t\t\t</li>
-                        {% if app.user %}
-                        <li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('blog_ajout')}}\">Add</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('panier')}}\">Cart</a>
 \t\t\t\t\t\t</li>
-                        {% endif %}
-\t\t\t\t\t\t</ul>
-                        
-                        
-                        
-                        
-                        <ul>
-                            <div class=\"shenasname\">
-                                Project: MEAN stack technology <br>
-                                Cours: Technologies avancées du web <br>
-                                Professor: Pierre POMPIDOR <br>
-                                By: <b>Hassina</b> BOUFATIS and <b>Amir</b> SHIRALI POUR <br>
-                            </div>
-                        </ul>
 
 
-                        <ul class=\"navbar-nav ml-auto\">
-                        <form class=\"form-inline my-2 my-lg-0\">
-                            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
-                            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
-                        </form>
-\t\t\t\t\t\t{% if not app.user %}
+\t\t\t\t\t\t{% if app.user.roles[0]=='ROLE_ADMIN' %}
 \t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('security_login')}}\">Login</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('security_logout')}}\">Logout</a>
+\t\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('admin_user')}}\">Users</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t{% endif %}
-\t\t\t\t\t</ul>
-\t\t\t\t</div>
-\t\t\t</nav>
-\t\t\t<div class=\"container\"> {% block body %}{% endblock %}
-\t\t\t\t</div>
-\t\t\t\t{% block javascripts %}{% endblock %}
-\t\t\t</body>
-\t\t</html>
-", "base.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/base.html.twig");
+\t\t\t\t\t{% endif %}
+\t\t\t\t</ul>
+
+
+\t\t\t\t<ul class=\"navbar-nav ml-auto\">
+\t\t\t\t\t<form class=\"form-inline my-2 my-lg-0\">
+\t\t\t\t\t\t<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">
+\t\t\t\t\t\t<button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+\t\t\t\t\t</form>
+\t\t\t\t\t{% if not app.user %}
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('security_login')}}\">Login</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t{% else %}
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('security_logout')}}\">Logout</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t{% endif %}
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t</nav>
+\t\t<div class=\"container\"> {% block body %}{% endblock %}
+\t\t\t</div>
+\t\t\t{% block javascripts %}{% endblock %}
+\t\t</body>
+\t</html>
+", "base.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/base.html.twig");
     }
 }

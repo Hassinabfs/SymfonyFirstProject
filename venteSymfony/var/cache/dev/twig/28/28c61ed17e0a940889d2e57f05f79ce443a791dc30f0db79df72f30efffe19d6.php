@@ -97,6 +97,6 @@ class __TwigTemplate_d92247df57435eba60cd6c2c55281b6e79569468c804d2524fca8ee7ca5
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

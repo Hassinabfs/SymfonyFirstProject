@@ -207,6 +207,6 @@ class __TwigTemplate_3d5be4bc966b53b39ab89f47180b5117d75b81e2ecb15d12ca22e2ece83
 \t{{ form_end(formProduit) }}
 
 {% endblock %}
-", "blog/ajoutProduit.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/blog/ajoutProduit.html.twig");
+", "blog/ajoutProduit.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/blog/ajoutProduit.html.twig");
     }
 }

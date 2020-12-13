@@ -40,13 +40,17 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/blog/([^/]++)(?'
-                    .'|/edit(*:191)'
-                    .'|(*:199)'
+                .'|/admin/users/edit/([^/]++)(*:195)'
+                .'|/blog/(?'
+                    .'|([^/]++)(?'
+                        .'|/edit(*:228)'
+                        .'|(*:236)'
+                    .')'
+                    .'|delete/([^/]++)(*:260)'
                 .')'
                 .'|/panier/(?'
-                    .'|add/([^/]++)(*:231)'
-                    .'|remove/([^/]++)(*:254)'
+                    .'|add/([^/]++)(*:292)'
+                    .'|remove/([^/]++)(*:315)'
                 .')'
             .')/?$}sDu',
     ],
@@ -58,10 +62,12 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        191 => [[['_route' => 'blog_edit', '_controller' => 'App\\Controller\\BlogController::AMProduit'], ['id'], null, null, false, false, null]],
-        199 => [[['_route' => 'blog_show', '_controller' => 'App\\Controller\\BlogController::show'], ['id'], null, null, false, true, null]],
-        231 => [[['_route' => 'panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
-        254 => [
+        195 => [[['_route' => 'admin_userEdit', '_controller' => 'App\\Controller\\AdminController::usersEdit'], ['id'], null, null, false, true, null]],
+        228 => [[['_route' => 'blog_edit', '_controller' => 'App\\Controller\\BlogController::AMProduit'], ['id'], null, null, false, false, null]],
+        236 => [[['_route' => 'blog_show', '_controller' => 'App\\Controller\\BlogController::show'], ['id'], null, null, false, true, null]],
+        260 => [[['_route' => 'blog_delete', '_controller' => 'App\\Controller\\BlogController::delete'], ['id'], null, null, false, true, null]],
+        292 => [[['_route' => 'panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
+        315 => [
             [['_route' => 'panier_remove', '_controller' => 'App\\Controller\\PanierController::remove'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -238,6 +238,6 @@ class __TwigTemplate_9fe4d10fade1337befe77e248772c9db4d28be54365262c3a7e4881b3af
 \t{% endif %}
 
 {% endblock %}
-", "panier/index.html.twig", "/Users/su6i/Amir/gitProjects/myGitProjects/Master-IPS-2019/temp/Hassina/SymfonyFirstProject/venteSymfony/templates/panier/index.html.twig");
+", "panier/index.html.twig", "/home/hassina/SymfonyFirstProject/venteSymfony/templates/panier/index.html.twig");
     }
 }
