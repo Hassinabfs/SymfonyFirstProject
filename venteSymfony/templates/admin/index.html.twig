@@ -23,11 +23,6 @@
 					<td>{{ user.email }}</td>
 					<td>{{ user.username }}</td>
 
-					<td>
-						<a href="{{ path('panier_remove' ,{'id': item.produit.id})}}" class="btn btn-danger sm">
-							<i class="fas fa-trash"></i>
-						</a>
-					</td>
 				</tr>
 
 			{% endfor %}

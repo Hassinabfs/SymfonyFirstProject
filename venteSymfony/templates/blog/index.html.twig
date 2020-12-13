@@ -1,26 +1,29 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('/assets/css/products.css') }}">
+{% endblock %}
+
+
 {% block title %}Hello
 
 {% endblock %}
 
 {% block body %}
 	<div class="bg-light p-3">
-		<h1>Les produits</h1>
+		<h1>Products:</h1>
 	</div>
 
 	<div class="row">
 		{% for produit in produits %}
 			<div class="col-4 mt-4">
-				<div class="border border-dark rounded p-2 clearfix">
+				<div class="border border-dark rounded p-2 clearfix pane">
 					<h4>
-						{{ produit.nom }}<br>
-
-						{{ produit.categorie.titre }}
+						{{ produit.categorie.titre }} {{ produit.nom }}
 
 
 					</h4>
-					<img class="img-fluid rounded" src="{{ produit.image }}" alt="Image de {{ produit.nom }}">
+					<img class="img-fluid rounded product" src="{{ produit.image }}" alt="Image de {{ produit.nom }}">
 					<h5>
 
 						{{ produit.type.titre }}
@@ -32,11 +35,11 @@
 					<hr>
 					<a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success float-right">
 						<i class="fas fa-shopping-cart mr-1"></i>
-						Acheter
+						Add
 					</a>
 					<a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success float-left">
 						<i class="fas fa-shopping-cart mr-1"></i>
-						En savoir plus
+						Details
 					</a>
 
 				</div>
