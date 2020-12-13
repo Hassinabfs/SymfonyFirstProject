@@ -33,15 +33,29 @@
 
 					</h5>
 					<hr>
-					<a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success float-right">
-						<i class="fas fa-shopping-cart mr-1"></i>
-						Add
-					</a>
-					<a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success float-left">
-						<i class="fas fa-shopping-cart mr-1"></i>
-						Details
-					</a>
-
+                    <div class="btn-toolbar">
+                        <a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success btn-md">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Add
+                        </a>
+                        {% if app.user %}
+                            {% if app.user.roles[0] == "ROLE_ADMIN" %}
+                            <a href="{{ path('blog_edit', {'id': produit.id})}}" class="btn btn-success btn-md">
+                                <i class="fas fa-shopping-cart mr-1"></i>
+                                Modify
+                            </a>
+                            <a href="{{ path('blog_delete', {'id': produit.id})}}" class="btn btn-success btn-md">
+                                <i class="fas fa-shopping-cart mr-1"></i>
+                                Remove
+                            </a>
+                            {% endif %}
+                        {% endif %}
+                        
+                        <a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success btn-md">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Details
+                        </a>
+                    </div>
 				</div>
 
 			</div>

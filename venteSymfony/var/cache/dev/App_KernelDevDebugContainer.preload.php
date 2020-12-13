@@ -509,6 +509,7 @@ $classes[] = 'Symfony\\Component\\Routing\\Generator\\CompiledUrlGenerator';
 $classes[] = 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableCompiledUrlMatcher';
 $classes[] = 'Symfony\\Component\\Routing\\Annotation\\Route';
 $classes[] = 'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\IsGranted';
+$classes[] = 'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Method';
 $classes[] = 'Doctrine\\ORM\\Mapping\\Entity';
 $classes[] = 'Doctrine\\ORM\\Mapping\\Id';
 $classes[] = 'Doctrine\\ORM\\Mapping\\GeneratedValue';
