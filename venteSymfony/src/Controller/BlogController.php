@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Categorie;
 use App\Entity\Produit;
+use App\Entity\RechercheCategorie;
+use App\Form\RechercheCategorieType;
 use App\Entity\Type;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -94,17 +96,6 @@ class BlogController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/blog/{id}",name="blog_show")
-     */
-    public function show($id): Response
-    {
-        $repo = $this->getDoctrine()->getRepository(Produit::class);
-        $produit = $repo->find($id);
-        return $this->render('blog/show.html.twig', [
-            'produit' => $produit
-        ]);
-    }
 
 
     /**
@@ -124,5 +115,47 @@ class BlogController extends AbstractController
         $response->send();
 
         return $this->redirectToRoute('blog');
+    }
+
+
+
+    /**
+     * @Route("/blog/findCategory", name="blog_findCategory")
+     * Method({"GET", "POST"})
+     */
+    public function findCategory(Request $request)
+    {
+        $rechercheCategorie  = new RechercheCategorie();
+        $form = $this->createForm(RechercheCategorieType::class, $rechercheCategorie);
+        $form->handleRequest($request);
+
+        $produits = [];
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $categorie = $rechercheCategorie->getCategorie();
+
+            if ($categorie != "") {
+
+                $produits = $categorie->getProduits();
+            } else
+                $produits = $this->getDoctrine()->getRepository(Produit::class)->findAll();
+        }
+
+        return $this->render('blog/rechercheCategorie.html.twig', [
+            'form' => $form->createView(), 'produits' => $produits
+        ]);
+    }
+
+
+    /**
+     * @Route("/blog/{id}",name="blog_show")
+     */
+    public function show($id): Response
+    {
+        $repo = $this->getDoctrine()->getRepository(Produit::class);
+        $produit = $repo->find($id);
+        return $this->render('blog/show.html.twig', [
+            'produit' => $produit
+        ]);
     }
 }

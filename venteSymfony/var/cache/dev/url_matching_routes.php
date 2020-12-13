@@ -18,6 +18,7 @@ return [
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\BlogController::home'], null, null, null, false, false, null]],
         '/blog/new' => [[['_route' => 'blog_ajout', '_controller' => 'App\\Controller\\BlogController::AMProduit'], null, null, null, false, false, null]],
+        '/blog/findCategory' => [[['_route' => 'blog_findCategory', '_controller' => 'App\\Controller\\BlogController::findCategory'], null, null, null, false, false, null]],
         '/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'security_inscription', '_controller' => 'App\\Controller\\SecurityController::inscription'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'security_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -42,15 +43,13 @@ return [
                 .')'
                 .'|/admin/users/edit/([^/]++)(*:195)'
                 .'|/blog/(?'
-                    .'|([^/]++)(?'
-                        .'|/edit(*:228)'
-                        .'|(*:236)'
-                    .')'
-                    .'|delete/([^/]++)(*:260)'
+                    .'|([^/]++)/edit(*:225)'
+                    .'|delete/([^/]++)(*:248)'
+                    .'|([^/]++)(*:264)'
                 .')'
                 .'|/panier/(?'
-                    .'|add/([^/]++)(*:292)'
-                    .'|remove/([^/]++)(*:315)'
+                    .'|add/([^/]++)(*:296)'
+                    .'|remove/([^/]++)(*:319)'
                 .')'
             .')/?$}sDu',
     ],
@@ -63,11 +62,11 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         195 => [[['_route' => 'admin_userEdit', '_controller' => 'App\\Controller\\AdminController::usersEdit'], ['id'], null, null, false, true, null]],
-        228 => [[['_route' => 'blog_edit', '_controller' => 'App\\Controller\\BlogController::AMProduit'], ['id'], null, null, false, false, null]],
-        236 => [[['_route' => 'blog_show', '_controller' => 'App\\Controller\\BlogController::show'], ['id'], null, null, false, true, null]],
-        260 => [[['_route' => 'blog_delete', '_controller' => 'App\\Controller\\BlogController::delete'], ['id'], null, null, false, true, null]],
-        292 => [[['_route' => 'panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
-        315 => [
+        225 => [[['_route' => 'blog_edit', '_controller' => 'App\\Controller\\BlogController::AMProduit'], ['id'], null, null, false, false, null]],
+        248 => [[['_route' => 'blog_delete', '_controller' => 'App\\Controller\\BlogController::delete'], ['id'], null, null, false, true, null]],
+        264 => [[['_route' => 'blog_show', '_controller' => 'App\\Controller\\BlogController::show'], ['id'], null, null, false, true, null]],
+        296 => [[['_route' => 'panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
+        319 => [
             [['_route' => 'panier_remove', '_controller' => 'App\\Controller\\PanierController::remove'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
