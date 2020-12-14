@@ -4,14 +4,9 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
-
-
-
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -56,7 +51,6 @@ class User implements UserInterface
      */
     private $roles = [];
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -98,13 +92,12 @@ class User implements UserInterface
         return $this;
     }
 
-
     public function getRoles(): array
     {
         // $roles = $this->roles;
-    
-        // $roles[] = 'ROLE_USER'; 
-       
+
+        // $roles[] = 'ROLE_USER';
+
         // return array_unique($roles);
 
         return $this->roles;
@@ -127,8 +120,6 @@ class User implements UserInterface
         // see section on salt below
         return null;
     }
-
-
 
     public function __toString()
     {

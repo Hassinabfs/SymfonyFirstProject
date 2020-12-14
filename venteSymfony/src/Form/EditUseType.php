@@ -28,7 +28,7 @@ class EditUseType extends AbstractType
                 'multiple' => true, // liste avec une selection
                 // les 2 des cases a cocher
 
-                'label' => "Roles"
+                'label' => 'Roles',
             ])
             ->add('valider', SubmitType::class);
     }

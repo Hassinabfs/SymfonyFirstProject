@@ -6,17 +6,9 @@ use App\Entity\User;
 use App\Form\EditUseType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
-
-
-
-
-
-
 
 class AdminController extends AbstractController
 {
@@ -40,7 +32,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/admin/users/edit/{id}", name="admin_userEdit")
      */
@@ -50,20 +41,18 @@ class AdminController extends AbstractController
         $form = $this->createForm(EditUseType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() ) {
-
-
+        if ($form->isSubmitted()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            
-            $this->addFlash('message', 'utilisateur modifier avec succes');
 
+            $this->addFlash('message', 'utilisateur modifier avec succes');
 
             return $this->redirectToRoute('admin_user');
         }
+
         return $this->render('admin/userEdit.html.twig', [
-             'userForm' => $form->createView()
+             'userForm' => $form->createView(),
          ]);
     }
 
@@ -74,6 +63,4 @@ class AdminController extends AbstractController
     {
         return $this->render('admin/profile.html.twig');
     }
-
-
 }
