@@ -45,7 +45,7 @@
                             {% endif %}
                         
                             <li class="nav-item">
-                                <a class="nav-link disabled" style="color:white;font-weight: bold;border: 2px; border-color: #92a8d1;border-style: solid;">{{ app.user.email }}</a>
+                                <a class="nav-link" href="{{ path('profile')}}" style="color:white;font-weight: bold;border: 2px; border-color: #92a8d1;border-style: solid;">{{ app.user.email }}</a>
                             </li>
                         {% endif %}
                     </ul>

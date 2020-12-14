@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin_index', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/users' => [[['_route' => 'admin_user', '_controller' => 'App\\Controller\\AdminController::usersList'], null, null, null, false, false, null]],
+        '/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\AdminController::profile'], null, null, null, false, false, null]],
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\BlogController::home'], null, null, null, false, false, null]],
         '/blog/new' => [[['_route' => 'blog_ajout', '_controller' => 'App\\Controller\\BlogController::AMProduit'], null, null, null, false, false, null]],

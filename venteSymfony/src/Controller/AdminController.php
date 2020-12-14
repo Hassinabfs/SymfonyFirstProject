@@ -65,4 +65,14 @@ class AdminController extends AbstractController
             'userForm' => $form->createView()
         ]);
     }
+
+    /**
+     * @Route("/profile", name="profile")
+     */
+    public function profile(UserRepository $users): Response
+    {
+        return $this->render('admin/profile.html.twig');
+    }
+
+
 }
