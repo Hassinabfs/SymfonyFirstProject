@@ -46,24 +46,25 @@ class AdminController extends AbstractController
      */
     public function usersEdit(User $user, Request $request): Response
     {
+        // dump($user);
         $form = $this->createForm(EditUseType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() ) {
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-
-
+            
             $this->addFlash('message', 'utilisateur modifier avec succes');
 
 
             return $this->redirectToRoute('admin_user');
         }
         return $this->render('admin/userEdit.html.twig', [
-            'userForm' => $form->createView()
-        ]);
+             'userForm' => $form->createView()
+         ]);
     }
 
     /**

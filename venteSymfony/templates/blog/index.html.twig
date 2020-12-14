@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('/assets/css/products.css') }}">
@@ -27,35 +27,22 @@
 					<img class="img-fluid rounded product" src="{{ produit.image }}" alt="Image de {{ produit.nom }}">
 					<h5>
 
-						{{ produit.type.titre }}
+						{# {{ produit.type.titre }} #}
 						<br>
-						{{ produit.prix }}
-						€
+						<span class="price">{{ produit.prix }}€ </span>
+						
 
 					</h5>
 					<hr>
                     <div class="btn-toolbar">
-                        <a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success btn-md">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Add
-                        </a>
+                        <a class="btn btn-success btn-md" href="{{ path('panier_add', {'id': produit.id})}}" role="button">Add</a>
                         {% if app.user %}
                             {% if app.user.roles[0] == "ROLE_ADMIN" %}
-                            <a href="{{ path('blog_edit', {'id': produit.id})}}" class="btn btn-success btn-md">
-                                <i class="fas fa-shopping-cart mr-1"></i>
-                                Modify
-                            </a>
-                            <a href="{{ path('blog_delete', {'id': produit.id})}}" class="btn btn-success btn-md">
-                                <i class="fas fa-shopping-cart mr-1"></i>
-                                Remove
-                            </a>
+                            <a class="btn btn-success btn-md" href="{{ path('blog_edit', {'id': produit.id})}}" role="button">Modify</a>
+                            <a class="btn btn-success btn-md" href="{{ path('blog_delete', {'id': produit.id})}}" role="button">Remove</a>
                             {% endif %}
                         {% endif %}
-                        
-                        <a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success btn-md">
-                            <i class="fas fa-shopping-cart mr-1"></i>
-                            Details
-                        </a>
+                        <a class="btn btn-success btn-md" href="{{ path('blog_show', {'id': produit.id})}}" role="button">Details</a>
                     </div>
 				</div>
 

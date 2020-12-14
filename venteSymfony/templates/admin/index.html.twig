@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
 {% block title %}Liste des utilisateurs
 {% endblock %}
@@ -34,7 +34,7 @@
 						{% endfor %}
 					</td>
 					<td>
-						<a href="{{ path('admin_userEdit', {'id': user.id})}}" class="btn btn-warning">Modifier</a>
+						<a href="{{ path('admin_userEdit', {'id': user.id})}}" class="btn btn-warning">Modify</a>
 					</td>
 
 				</tr>

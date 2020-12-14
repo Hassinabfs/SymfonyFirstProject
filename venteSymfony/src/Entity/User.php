@@ -54,7 +54,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = 'ROLE_USER';
+    private $roles = [];
 
 
     public function getId(): ?int
@@ -101,10 +101,13 @@ class User implements UserInterface
 
     public function getRoles(): array
     {
-        $roles = $this->roles;
+        // $roles = $this->roles;
+    
+        // $roles[] = 'ROLE_USER'; 
+       
+        // return array_unique($roles);
 
-        $roles[] = 'ROLE_USER';
-        return array_unique($roles);
+        return $this->roles;
     }
 
     public function setRoles(array $roles): self

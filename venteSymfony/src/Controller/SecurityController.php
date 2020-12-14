@@ -44,13 +44,19 @@ class SecurityController extends AbstractController
 
             //on modifie le mot de passe et a la place en met hash
             $user->setPassword($hash);
+            $user->setRoles(['ROLE_USER']);
 
             $manager->persist($user);
             $manager->flush(); //ajouter dans la base
+            
+            return $this->redirectToRoute('security_login');
         }
 
 
-        return $this->render('security/login.html.twig');
+        return $this->render('security/inscription.html.twig', [
+            'form' => $form->createView(),
+        ]);
+        
     }
 
 

@@ -13,7 +13,7 @@ body, html {
 }
 
 .group {
-  width: 60%;
+  width: 80%;
   margin:auto;
   background: rgb(241, 238, 233);
   padding: 15px;
@@ -99,4 +99,13 @@ img.product {
   padding: 5px;
   margin: 0px;
   border-style: ridge;
+}
+
+a.btn{
+    margin: 2px;
+}
+
+.price{
+    color: darkgreen;
+    font-weight: bold;
 }
