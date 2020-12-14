@@ -1,4 +1,4 @@
-drop table data;
+-- drop table data;
 
 CREATE TABLE IF NOT EXISTS `data` (
 `name` varchar(255) NULL,
@@ -16,8 +16,13 @@ INSERT INTO data VALUES
 ('Étui en aramide pour Galaxy Z Fold2 5G',75,'/assets/image/9.jpg',1,1,'Design renforcé\,2 angles de visualisation\,Ultra fin et léger\,Toucher agréable'),
 ('Étui en cuir pour Galaxy Z Fold2 5G',100,'/assets/image/10.jpg',1,1,'Finition cuir\,Bonne prise en main\,Protection contre les chocs et rayures\,Doublure fine et protectrice à l''intérieur'),
 ('Galaxy Watch3 Bluetooth (45mm)',659,'/assets/image/11.jpeg',1,2,'Design affirmé avec lunette rotative\,Personnalisation bracelet et cadran\,Sport & bien-être\,Étanche jusqu’à 50m'),
-('Galaxy Watch3 4G (45mm)',509,'/assets/image/5.jpeg',1,2,'Design affirmé avec lunette rotative\,Personnalisation bracelet et cadran\,Sport & bien-être\,Étanche jusqu’à 50m'),
-('Galaxy Watch3 Bluetooth (41mm)',429,'/assets/image/6.jpg',1,2,'Design affirmé avec lunette rotative\,Personnalisation bracelet et cadran\,Sport & bien-être\,Étanche jusqu’à 50m'),
+('Galaxy Watch3 4G (45mm)',509,'/assets/image/5.jpeg',1,2,'Design affirmé avec lunette rotative\,Personnalisation bracelet et cadran\,Sport & bien-être\,Étanche jusqu’à 50m');
+
+
+
+INSERT INTO data VALUES
+
+('Galaxy Watch3 Bluetooth (41mm)',429,'/assets/image/6.jpg',1,2,'Design affirmé avec lunette rotative\,Personnalisation bracelet et cadran\,Sport & bien-être\,Étanche jusqu à 50m'),
 ('Galaxy Watch 46 mm eSIM 4G ',329,'/assets/image/7.jpeg',1,2,'Design soigné avec lunette rotative\,Connectivité cellulaire\,Fonctionnalités sport et bien-être\,Votre musique vous suit partout'),
 ('USB 3.0 Flash Drive DUO ',29,'/assets/image/1.jpg',1,3,'Une vitesse de transfert allant jusqu’à 130MB/s\,Se connecte aux Smartphones\, tablets et PC par micro USB\,Protection à 5 niveaux'),
 ('USB 3.0 Flash Drive FIT ',15,'/assets/image/2.jpg',1,3,'Une vitesse de transfert allant jusqu’à 130MB/s\,Se connecte aux netbooks et PC ultra fins\,Protection à 5 niveaux'),
@@ -26,20 +31,37 @@ INSERT INTO data VALUES
 ('Galaxy A71',469,'/assets/image/14.jpeg',1,4,'Ecran Infinity 6.7 pouce Super AMOLED\,Quadruple capteur photo - Mode Macro\,Capteur principal 64 MP pour des photos nettes\,Charge ultra rapide - Batterie longue durée - 4500'),
 ('Galaxy Z Fold2 5G',2020,'/assets/image/13.jpg',1,4,'Grand écran pliable intérieur de 7.6 pouce\,Ecran extérieur de 6.2 pouce\,Charnière à position libre pour plus de flexibilité'),
 ('Galaxy A31',299,'/assets/image/15.jpg',1,4,'Écran panoramique 6.4 pouce Super AMOLED\,Quadruple capteur photo avec Ultra grand angle\,Batterie longue durée - 5000 mAh + Charge rapide\,Stockage 64 Go + lecteur d''empreinte sous l''écran'),
-('Galaxy Tab A7 4G',299,'/assets/image/16.jpeg',1,5,'Un grand écran de 10.4 pouce\,Autonameie longue durée\,Samsung Kids\,Caméra en mode paysage pour vos appels vidéo'),
+('Galaxy Tab A7 4G',299,'/assets/image/16.jpeg',1,5,'Un grand écran de 10.4 pouce\,Autonameie longue durée\,Samsung Kids\,Caméra en mode paysage pour vos appels vidéo');
+
+
+
+
+
 ('Galaxy Tab S7 Wi-Fi',719,'/assets/image/17.jpg',1,5,'Écran ultra immersif 11 pouce\,S Pen connecté ultra précis\,La puissance d’un ordinateur\,Stockage 128/256Go + port microSD'),
 ('Galaxy Tab S6 Lite',349,'/assets/image/18.jpg',1,5,'Design fin et finition en aluminum\,S Pen amélioré pour une expérience plus ergonamei\,Écran panoramique 10.4 pouce\,Mémoire embarquée 64Go'),
-('Galaxy Tab S6 Gris Titane 4G',679,'/assets/image/19.jpg',1,5,'Ultrafine 5.7mm\,Écran panoramique 10.5 pouce\,S Pen avec contrôle par gestes\,Lecteur d’empreinte sous l’écran'),
-('iPad Air',669,'/assets/image/25.jpeg',2,5,'10.9 pouce Écran Liquid Retina\,Puce A14 Bionic\,Compatible avec le Magic Keyboard et le Smart Keyboard Folio\,Compatible avec l’Apple Pencil (2ᵉ génération)'),
-('iPad Pro',899,'/assets/image/24.jpeg',2,5,'12.9 pouce  et 11 pouce  Écran Liquid Retina avec ProMotion\,Puce A12Z Bionic\,Compatible avec le Magic Keyboard et le Smart Keyboard Folio\,Compatible avec l’Apple Pencil (2ᵉ génération)'),
+('Galaxy Tab S6 Gris Titane 4G',679,'/assets/image/19.jpg',1,5,'Ultrafine 5.7mm\,Écran panoramique 10.5 pouce\,S Pen avec contrôle par gestes\,Lecteur d’empreinte sous l’écran');
+
+INSERT INTO data VALUES('iPad Air',669,'/assets/image/25.jpeg',2,5,'10.9 pouce Écran Liquid Retina\,Puce A14 Bionic\,Compatible avec le Magic Keyboard et le Smart Keyboard Folio\,Compatible avec l’Apple Pencil 2 génération');
+INSERT INTO data VALUES
+('iPad Pro',899,'/assets/image/24.jpeg',2,5,'12.9 pouce  et 11 pouce  Écran Liquid Retina avec ProMotion\,Puce A12Z Bionic\,Compatible avec le Magic Keyboard et le Smart Keyboard Folio\,Compatible avec l’Apple Pencil (2 génération)'),
 ('iPad',389,'/assets/image/26.jpeg',2,5,'10.2 pouce Écran Retina\,Puce A12 Bionic\,Compatible avec le Smart Keyboard\,Compatible avec l’Apple Pencil (1re génération)'),
-('iPad mini',459,'/assets/image/27.jpeg',2,5,'7\,9 pouce Écran Retina\,Puce A12 Bionic\,Compatible avec les claviers Bluetooth\,Compatible avec l’Apple Pencil (1re génération)'),
-('iPhone 11 Pro',1159,'/assets/image/21.png',2,4,'Triple appareil photo \, grand‑angle\,Jusqu’à 17 heures de lecture vidéo\,Résistant à l’eau jusqu’à 2 mètres de profondeur pendant 30 minutes maximum\,Écran Super Retina XDR 5\,8pouce \,Écran Liquid Retina HD 6.1 pouce'),
-('iPhone 11',809,'/assets/image/22.png',2,4,'Double appareil photo (ultra grand‑angle\, grand‑angle)\,Quadruple capteur photo - Mode Macro\,Capteur principal 64 MP pour des photos nettes\,Charge ultra rapide - Batterie longue durée - 4500'),
+('iPad mini',459,'/assets/image/27.jpeg',2,5,'7\,9 pouce Écran Retina\,Puce A12 Bionic\,Compatible avec les claviers Bluetooth\,Compatible avec l’Apple Pencil 1re génération');
+
+
+
+
+INSERT INTO data VALUES
+('iPhone 11 Pro',1159,'/assets/image/21.png',2,4,'Triple appareil photo \, grand angle\,Jusqu’à 17 heures de lecture vidéo\,Résistant à l’eau jusqu’à 2 mètres de profondeur pendant 30 minutes maximum\,Écran Super Retina XDR 5\,8pouce \,Écran Liquid Retina HD 6.1 pouce'),
+('iPhone 11',809,'/assets/image/22.png',2,4,'Double appareil photo (ultra grand‑angle\, grand‑angle)\,Quadruple capteur photo - Mode Macro\,Capteur principal 64 MP pour des photos nettes\,Charge ultra rapide Batterie longue durée  4500'),
 ('iPhone X',709,'/assets/image/23.png',2,4,'Appareil photo(grand‑angle)\,Jusqu’à 16 heures de lecture vidéo\,Résistant à l’eau jusqu’à 1 mètre de profondeur pendant 30 minutes maximum\,Écran Liquid Retina HD  6.1  pouce '),
-('iPhone SE',489,'/assets/image/20.png',2,4,'Appareil photo(grand‑angle)\,Jusqu’à 13 heures de lecture vidéo\,Résistant à l’eau jusqu’à 1 mètre de profondeur pendant 30 minutes maximum\,Écran Retina HD 4.7 pouce'),
+('iPhone SE',489,'/assets/image/20.png',2,4,'Appareil photo(grand‑angle)\,Jusqu’à 13 heures de lecture vidéo\,Résistant à l’eau jusqu’à 1 mètre de profondeur pendant 30 minutes maximum\,Écran Retina HD 4.7 pouce');
+
+INSERT INTO data VALUES
 ('Apple Watch Series 6',429,'/assets/image/36.jpeg',2,2,'Boîtier de 40 mm\,Écran Retina toujours activé\,GPS \,App ECG\,Notifications de fréquence cardiaque élevée ou faible Notifications d’arythmie\,Configuration familiale prise en charge\,Résistance à l’eau jusqu’à 50 mètres'),
-('Apple Watch SE',299,'/assets/image/37.jpeg',2,2,'Boîtier de 40 ou 44 mm\,Écran Retina \,GPS + Cellular1 GPS\,Notifications de fréquence cardiaque élevée ou faible Notifications d’arythmie\,Configuration familiale prise en charge (modèles GPS + Cellular)\,Résistance à l’eau jusqu’à 50 mètres'),
+('Apple Watch SE',299,'/assets/image/37.jpeg',2,2,'Boîtier de 40 ou 44 mm\,Écran Retina \,GPS + Cellular1 GPS\,Notifications de fréquence cardiaque élevée ou faible Notifications d’arythmie\,Configuration familiale prise en charge (modèles GPS + Cellular)\,Résistance à l’eau jusqu’à 50 mètres');
+
+
+INSERT INTO data VALUES
 ('Apple Watch Series 3',219,'/assets/image/38.jpeg',2,2,'Boîtier de 38 ou 42 mm\,Écran Retina\,GPS\,Notifications de fréquence cardiaque élevée ou faible Notifications d’arythmie\,Résistance à l’eau jusqu’à 50 mètres'),
 ('HomePod',329,'/assets/image/35.jpeg',2,1,'Sans-fil\,Bluetooth 5.0\,Accès invité direct\,Micro interne de calibration des fréquences basses pour une correction automatique des graves\,Formation de faisceaux pour le son direct et ambiant'),
 ('HomePod mini',99,'/assets/image/34.jpeg',2,1,'Son riche et ample\,Assistant intelligent\,Contrôle de votre maison connectée\,Confidentialité et sécurité'),

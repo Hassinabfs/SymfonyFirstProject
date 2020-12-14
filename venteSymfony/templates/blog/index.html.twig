@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('/assets/css/products.css') }}">
+	<link rel="stylesheet" href="{{ asset('/assets/css/products.css') }}">
 {% endblock %}
 
 
@@ -19,7 +19,8 @@
 			<div class="col-4 mt-4">
 				<div class="border border-dark rounded p-2 clearfix pane">
 					<h4>
-						{{ produit.categorie.titre }} {{ produit.nom }}
+						{{ produit.categorie.titre }}
+						{{ produit.nom }}
 
 
 					</h4>
