@@ -19,6 +19,7 @@ return [
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\BlogController::home'], null, null, null, false, false, null]],
         '/blog/new' => [[['_route' => 'blog_ajout', '_controller' => 'App\\Controller\\BlogController::AMProduit'], null, null, null, false, false, null]],
         '/blog/findCategory' => [[['_route' => 'blog_findCategory', '_controller' => 'App\\Controller\\BlogController::findCategory'], null, null, null, false, false, null]],
+        '/blog/findType' => [[['_route' => 'blog_findType', '_controller' => 'App\\Controller\\BlogController::findType'], null, null, null, false, false, null]],
         '/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'security_inscription', '_controller' => 'App\\Controller\\SecurityController::inscription'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'security_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

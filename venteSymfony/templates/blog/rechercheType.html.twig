@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('/assets/css/products.css') }}">
+{% endblock %}
+
+
+{% block title %}Hello
+
+{% endblock %}
+
+{% block body %}
+
+	{{ form_start(form) }}
+
+
+	{{ form_row(form.type) }}
+
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">Rechercher</button>
+	</div>
+
+
+	{{ form_end(form) }}
+
+	{% if produits %}
+		<h1>elle existe des produits
+		</h1>
+		{% for produit in produits %}
+			<div class="col-4 mt-4">
+				<div class="border border-dark rounded p-2 clearfix pane">
+					<h4>
+						{{ produit.categorie.titre }}
+						{{ produit.nom }}
+
+						{% if produit.image %}
+						</h4>
+						<img class="img-fluid rounded product" src="{{ produit.image }}" alt="Image de {{ produit.nom }}">
+						<h5>
+						{% endif %}
+
+						{{ produit.type.titre }}
+						<br>
+						{{ produit.prix }}
+						€
+
+					</h5>
+					<hr>
+					<a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-success float-right">
+						<i class="fas fa-shopping-cart mr-1"></i>
+						Add
+					</a>
+					<a href="{{ path('blog_show', {'id': produit.id})}}" class="btn btn-success float-left">
+						<i class="fas fa-shopping-cart mr-1"></i>
+						Details
+					</a>
+					<a href="{{ path('blog_delete', {'id': produit.id})}}" class="btn btn-success float-left">
+						<i class="fas fa-shopping-cart mr-1"></i>
+						delete
+					</a>
+
+				</div>
+
+			</div>
+		{% endfor %}
+
+
+	{% endif %}
+
+{% endblock %}

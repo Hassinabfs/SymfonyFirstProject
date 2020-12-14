@@ -7,6 +7,8 @@ use App\Entity\Produit;
 use App\Entity\RechercheCategorie;
 use App\Form\RechercheCategorieType;
 use App\Entity\Type;
+use App\Entity\RechercheType;
+use App\Form\RechercheTypeType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -145,6 +147,36 @@ class BlogController extends AbstractController
             'form' => $form->createView(), 'produits' => $produits
         ]);
     }
+
+
+    /**
+     * @Route("/blog/findType", name="blog_findType")
+     * Method({"GET", "POST"})
+     */
+    public function findType(Request $request)
+    {
+        $rechercheType  = new RechercheType();
+        $form = $this->createForm(RechercheTypeType::class, $rechercheType);
+        $form->handleRequest($request);
+
+        $produits = [];
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $type = $rechercheType->getType();
+
+            if ($type != "") {
+
+                $produits = $type->getProduits();
+            } else
+                $produits = $this->getDoctrine()->getRepository(Produit::class)->findAll();
+        }
+
+        return $this->render('blog/rechercheType.html.twig', [
+            'form' => $form->createView(), 'produits' => $produits
+        ]);
+    }
+
+
 
 
     /**
