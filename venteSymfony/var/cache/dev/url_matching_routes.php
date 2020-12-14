@@ -18,6 +18,8 @@ return [
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\BlogController::home'], null, null, null, false, false, null]],
         '/blog/new' => [[['_route' => 'blog_ajout', '_controller' => 'App\\Controller\\BlogController::AMProduit'], null, null, null, false, false, null]],
+        '/blog/new/category' => [[['_route' => 'blog_ajout_category', '_controller' => 'App\\Controller\\BlogController::ajoutCategorie'], null, null, null, false, false, null]],
+        '/blog/new/type' => [[['_route' => 'blog_ajout_type', '_controller' => 'App\\Controller\\BlogController::ajoutType'], null, null, null, false, false, null]],
         '/blog/findCategory' => [[['_route' => 'blog_findCategory', '_controller' => 'App\\Controller\\BlogController::findCategory'], null, null, null, false, false, null]],
         '/blog/findType' => [[['_route' => 'blog_findType', '_controller' => 'App\\Controller\\BlogController::findType'], null, null, null, false, false, null]],
         '/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'], null, null, null, false, false, null]],

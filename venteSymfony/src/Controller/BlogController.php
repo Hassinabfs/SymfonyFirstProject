@@ -99,8 +99,77 @@ class BlogController extends AbstractController
     }
 
 
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/blog/new/category",name="blog_ajout_category")
+     */
+    public function ajoutCategorie(Request $request, EntityManagerInterface $manager)
+    {
 
-     /**
+        $categorie = new Categorie();
+
+        $form = $this->createFormBuilder($categorie)
+            ->add('titre')
+
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $manager->persist($categorie);
+
+            $manager->flush();
+
+            return $this->redirectToRoute('blog_findCategory');
+        }
+
+
+        return $this->render('blog/ajoutCategorie.html.twig', [
+            'formCategorie' => $form->createView(),
+
+        ]);
+    }
+
+
+
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/blog/new/type",name="blog_ajout_type")
+     */
+    public function ajoutType(Request $request, EntityManagerInterface $manager)
+    {
+
+        $type = new Type();
+
+        $form = $this->createFormBuilder($type)
+            ->add('titre')
+
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $manager->persist($type);
+
+            $manager->flush();
+
+            return $this->redirectToRoute('blog_findType');
+        }
+
+
+        return $this->render('blog/ajoutType.html.twig', [
+            'formType' => $form->createView(),
+
+        ]);
+    }
+
+
+
+
+    /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/blog/delete/{id}",name="blog_delete")
      * @Method({"DELETE"})
@@ -113,7 +182,6 @@ class BlogController extends AbstractController
         $entityManager->remove($produit);
         $entityManager->flush();
         return $this->redirectToRoute('blog');
-
     }
 
 
@@ -174,7 +242,7 @@ class BlogController extends AbstractController
     }
 
 
-    
+
     /**
      * @Route("/blog/{id}",name="blog_show")
      */
@@ -186,7 +254,4 @@ class BlogController extends AbstractController
             'produit' => $produit
         ]);
     }
-
-
-   
 }
