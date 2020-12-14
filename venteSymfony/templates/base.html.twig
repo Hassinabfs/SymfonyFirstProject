@@ -9,7 +9,7 @@
 
 
 		<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css"> {% block stylesheets %}{% endblock %}
-		<link rel="stylesheet" href="assets/css/base.css">
+        {# <link rel="stylesheet" href="assets/css/base.css"> #}
 
 	</head>
 	<body>
@@ -35,16 +35,20 @@
 						</li>
 
 
-						{% if app.user.roles[0]=='ROLE_ADMIN' %}
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('blog_ajout')}}">Add</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('admin_user')}}">Users</a>
-							</li>
-						{% endif %}
-					{% endif %}
-				</ul>
+                            {% if app.user.roles[0]=='ROLE_ADMIN' %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('blog_ajout')}}">Add</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('admin_user')}}">Users</a>
+                                </li>
+                            {% endif %}
+                        
+                            <li class="nav-item">
+                                <a class="nav-link disabled" style="color:white;font-weight: bold;border: 2px; border-color: #92a8d1;border-style: solid;">{{ app.user.email }}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
 
 
 				<ul class="navbar-nav ml-auto">

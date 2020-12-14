@@ -100,7 +100,7 @@ class BlogController extends AbstractController
 
 
 
-    /**
+     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/blog/delete/{id}",name="blog_delete")
      * @Method({"DELETE"})
@@ -112,13 +112,9 @@ class BlogController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($produit);
         $entityManager->flush();
-
-        $response = new Response();
-        $response->send();
-
         return $this->redirectToRoute('blog');
-    }
 
+    }
 
 
     /**
@@ -149,6 +145,7 @@ class BlogController extends AbstractController
     }
 
 
+
     /**
      * @Route("/blog/findType", name="blog_findType")
      * Method({"GET", "POST"})
@@ -177,8 +174,7 @@ class BlogController extends AbstractController
     }
 
 
-
-
+    
     /**
      * @Route("/blog/{id}",name="blog_show")
      */
@@ -190,4 +186,7 @@ class BlogController extends AbstractController
             'produit' => $produit
         ]);
     }
+
+
+   
 }
