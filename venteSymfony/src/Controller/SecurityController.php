@@ -9,6 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class SecurityController extends AbstractController
 {
@@ -66,4 +69,22 @@ class SecurityController extends AbstractController
     {
         return $this->render('security/login.html.twig');
     }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/security/delete/{id}",name="user_delete")
+     * @Method({"DELETE"})
+     */
+    public function delete(Request $request, $id)
+    {
+        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('admin_user');
+    }
+
+
 }
