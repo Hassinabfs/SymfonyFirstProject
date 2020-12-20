@@ -2,8 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\Type;
 use App\Entity\RechercheType;
+use App\Entity\Type;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +17,7 @@ class RechercheTypeType extends AbstractType
             ->add('type', EntityType::class, [
                 'class' => Type::class,
                 'choice_label' => 'titre',
-                'label' => 'Type'
+                'label' => 'Type',
             ]);
     }
 

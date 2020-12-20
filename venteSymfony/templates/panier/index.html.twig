@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
 
 {% block title %}Hello PanierController!
 {% endblock %}
@@ -10,9 +10,9 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Produit</th>
-					<th>Prix</th>
-					<th>Quantite</th>
+					<th>Product</th>
+					<th>Price</th>
+					<th>Quantity</th>
 
 					<th></th>
 				</tr>
@@ -25,9 +25,7 @@
 						<td>{{ item.quantity }}</td>
 						<td>{{ item.quantity * item.produit.prix }}</td>
 						<td>
-							<a href="{{ path('panier_remove' ,{'id': item.produit.id})}}" class="btn btn-danger sm">
-								<i class="fas fa-trash"></i>
-							</a>
+                            <a class="btn btn-success btn-md" href="{{ path('panier_remove' ,{'id': item.produit.id})}}" role="button">Remove</a>
 						</td>
 					</tr>
 

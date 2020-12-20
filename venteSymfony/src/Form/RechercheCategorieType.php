@@ -17,7 +17,7 @@ class RechercheCategorieType extends AbstractType
             ->add('categorie', EntityType::class, [
                 'class' => Categorie::class,
                 'choice_label' => 'titre',
-                'label' => 'Categorie'
+                'label' => 'Categorie',
             ]);
     }
 

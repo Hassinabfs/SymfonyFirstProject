@@ -3,13 +3,11 @@
 namespace App\Controller;
 
 use App\Repository\ProduitRepository;
-use PhpParser\Node\Expr\Empty_;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class PanierController extends AbstractController
 {
@@ -27,8 +25,7 @@ class PanierController extends AbstractController
         foreach ($panier as $id => $quantity) {
             $panierWithData[] = [
                 'produit' => $produitRepository->find($id),
-                'quantity' => $quantity
-
+                'quantity' => $quantity,
             ];
         }
 
@@ -37,7 +34,6 @@ class PanierController extends AbstractController
         $total = 0;
 
         foreach ($panierWithData as $item) {
-
             $totalItem = $item['produit']->getPrix() * $item['quantity'];
             $total += $totalItem;
         }
@@ -48,31 +44,26 @@ class PanierController extends AbstractController
         ]);
     }
 
-
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/panier/add/{id}", name="panier_add")
      */
     public function add($id, SessionInterface $session)
     {
-
-
         //si j'ai pas un panier on va l'ajouter avec []
         $panier = $session->get('panier', []);
 
-
         if (!empty($panier[$id])) {
-            $panier[$id]++;
+            ++$panier[$id];
         } else {
             //dans le panier on a une cle qui est l'identifiant
             $panier[$id] = 1;
         }
 
-
         //ajouter le panier dans la session
         $session->set('panier', $panier);
 
-        return $this->redirectToRoute("panier");
+        return $this->redirectToRoute('panier');
 
         //dd($session->get('panier'));
     }
@@ -89,6 +80,7 @@ class PanierController extends AbstractController
             unset($panier[$id]);
         }
         $session->set('panier', $panier);
-        return $this->redirectToRoute("panier");
+
+        return $this->redirectToRoute('panier');
     }
 }

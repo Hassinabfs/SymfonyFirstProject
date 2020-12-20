@@ -18,6 +18,7 @@ return [
     'admin_index' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin']], [], []],
     'admin_user' => [[], ['_controller' => 'App\\Controller\\AdminController::usersList'], [], [['text', '/admin/users']], [], []],
     'admin_userEdit' => [['id'], ['_controller' => 'App\\Controller\\AdminController::usersEdit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/users/edit']], [], []],
+    'profile' => [[], ['_controller' => 'App\\Controller\\AdminController::profile'], [], [['text', '/profile']], [], []],
     'blog' => [[], ['_controller' => 'App\\Controller\\BlogController::index'], [], [['text', '/blog']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\BlogController::home'], [], [['text', '/']], [], []],
     'blog_ajout' => [[], ['_controller' => 'App\\Controller\\BlogController::AMProduit'], [], [['text', '/blog/new']], [], []],
@@ -34,4 +35,5 @@ return [
     'security_inscription' => [[], ['_controller' => 'App\\Controller\\SecurityController::inscription'], [], [['text', '/inscription']], [], []],
     'security_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/connexion']], [], []],
     'security_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/deconnexion']], [], []],
+    'user_delete' => [['id'], ['_controller' => 'App\\Controller\\SecurityController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/security/delete']], [], []],
 ];
