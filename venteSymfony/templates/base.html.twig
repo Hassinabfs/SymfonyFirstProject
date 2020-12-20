@@ -28,11 +28,19 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('blog')}}">Products</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('blog_findCategory')}}">Brands</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('blog_findType')}}">Types</a>
+					</li>
 					{% if app.user %}
 
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('panier')}}">Cart</a>
 						</li>
+
+
 
 
                             {% if app.user.roles[0]=='ROLE_ADMIN' %}
@@ -42,10 +50,19 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ path('admin_user')}}">Users</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('blog_ajout')}}">Add Product</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('blog_ajout_category')}}">Add Category</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('blog_ajout_type')}}">Add Type</a>
+                                </li>
                             {% endif %}
                         
                             <li class="nav-item">
-                                <a class="nav-link disabled" style="color:white;font-weight: bold;border: 2px; border-color: #92a8d1;border-style: solid;">{{ app.user.email }}</a>
+                                <a class="nav-link" href="{{ path('profile')}}" style="color:white;font-weight: bold;border: 2px; border-color: #92a8d1;border-style: solid;">{{ app.user.email }}</a>
                             </li>
                         {% endif %}
                     </ul>

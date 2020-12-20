@@ -5,22 +5,18 @@ namespace App\Controller;
 use App\Entity\Categorie;
 use App\Entity\Produit;
 use App\Entity\RechercheCategorie;
-use App\Form\RechercheCategorieType;
-use App\Entity\Type;
 use App\Entity\RechercheType;
+use App\Entity\Type;
+use App\Form\RechercheCategorieType;
 use App\Form\RechercheTypeType;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-
-
-
-
 
 class BlogController extends AbstractController
 {
@@ -32,12 +28,12 @@ class BlogController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Produit::class);
         /** je veux discuter a doctrine qui va me donner un repository */
         $produits = $repo->findAll();
+
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
             'produits' => $produits,
         ]);
     }
-
 
     /**
      * @Route("/",name="home")
@@ -46,6 +42,7 @@ class BlogController extends AbstractController
     {
         return $this->render('blog/home.html.twig');
     }
+
     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/blog/new",name="blog_ajout")
@@ -66,11 +63,11 @@ class BlogController extends AbstractController
             ->add('image')
             ->add('categorie', EntityType::class, [
                 'class' => Categorie::class,
-                'choice_label' => 'titre'
+                'choice_label' => 'titre',
             ])
             ->add('type', EntityType::class, [
                 'class' => Type::class,
-                'choice_label' => 'titre'
+                'choice_label' => 'titre',
             ])
             ->add('description')
             ->add('description_detaille')
@@ -80,7 +77,6 @@ class BlogController extends AbstractController
         /**demander au formulaire d'analyser la requete http qu'on a envoyer en parametre  */
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $manager->persist($produit);
             /**demander au manager de se preparer a faire persister l'article */
             $manager->flush();
@@ -89,15 +85,13 @@ class BlogController extends AbstractController
             /**demande de redirection a la page blog_show en precisant que l'id est celui de l' article ajouter */
         }
 
-
         return $this->render('blog/ajoutProduit.html.twig', [
             'formProduit' => $form->createView(),
             /**on va passer a twig un tableau qui contien les information qu on veut lui passer
              * et egalement une variable formProduit  qui va avoir le resultat de createView de formulaire*/
-            'editMode' => $produit->getId() !== null
+            'editMode' => null !== $produit->getId(),
         ]);
     }
-
 
     /**
      * @IsGranted("ROLE_ADMIN")
@@ -105,7 +99,6 @@ class BlogController extends AbstractController
      */
     public function ajoutCategorie(Request $request, EntityManagerInterface $manager)
     {
-
         $categorie = new Categorie();
 
         $form = $this->createFormBuilder($categorie)
@@ -116,7 +109,6 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $manager->persist($categorie);
 
             $manager->flush();
@@ -124,15 +116,10 @@ class BlogController extends AbstractController
             return $this->redirectToRoute('blog_findCategory');
         }
 
-
         return $this->render('blog/ajoutCategorie.html.twig', [
             'formCategorie' => $form->createView(),
-
         ]);
     }
-
-
-
 
     /**
      * @IsGranted("ROLE_ADMIN")
@@ -140,7 +127,6 @@ class BlogController extends AbstractController
      */
     public function ajoutType(Request $request, EntityManagerInterface $manager)
     {
-
         $type = new Type();
 
         $form = $this->createFormBuilder($type)
@@ -151,7 +137,6 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $manager->persist($type);
 
             $manager->flush();
@@ -159,15 +144,10 @@ class BlogController extends AbstractController
             return $this->redirectToRoute('blog_findType');
         }
 
-
         return $this->render('blog/ajoutType.html.twig', [
             'formType' => $form->createView(),
-
         ]);
     }
-
-
-
 
     /**
      * @IsGranted("ROLE_ADMIN")
@@ -181,9 +161,9 @@ class BlogController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($produit);
         $entityManager->flush();
+
         return $this->redirectToRoute('blog');
     }
-
 
     /**
      * @Route("/blog/findCategory", name="blog_findCategory")
@@ -191,7 +171,7 @@ class BlogController extends AbstractController
      */
     public function findCategory(Request $request)
     {
-        $rechercheCategorie  = new RechercheCategorie();
+        $rechercheCategorie = new RechercheCategorie();
         $form = $this->createForm(RechercheCategorieType::class, $rechercheCategorie);
         $form->handleRequest($request);
 
@@ -200,19 +180,17 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $categorie = $rechercheCategorie->getCategorie();
 
-            if ($categorie != "") {
-
+            if ('' != $categorie) {
                 $produits = $categorie->getProduits();
-            } else
+            } else {
                 $produits = $this->getDoctrine()->getRepository(Produit::class)->findAll();
+            }
         }
 
         return $this->render('blog/rechercheCategorie.html.twig', [
-            'form' => $form->createView(), 'produits' => $produits
+            'form' => $form->createView(), 'produits' => $produits,
         ]);
     }
-
-
 
     /**
      * @Route("/blog/findType", name="blog_findType")
@@ -220,7 +198,7 @@ class BlogController extends AbstractController
      */
     public function findType(Request $request)
     {
-        $rechercheType  = new RechercheType();
+        $rechercheType = new RechercheType();
         $form = $this->createForm(RechercheTypeType::class, $rechercheType);
         $form->handleRequest($request);
 
@@ -229,19 +207,17 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $type = $rechercheType->getType();
 
-            if ($type != "") {
-
+            if ('' != $type) {
                 $produits = $type->getProduits();
-            } else
+            } else {
                 $produits = $this->getDoctrine()->getRepository(Produit::class)->findAll();
+            }
         }
 
         return $this->render('blog/rechercheType.html.twig', [
-            'form' => $form->createView(), 'produits' => $produits
+            'form' => $form->createView(), 'produits' => $produits,
         ]);
     }
-
-
 
     /**
      * @Route("/blog/{id}",name="blog_show")
@@ -250,8 +226,9 @@ class BlogController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Produit::class);
         $produit = $repo->find($id);
+
         return $this->render('blog/show.html.twig', [
-            'produit' => $produit
+            'produit' => $produit,
         ]);
     }
 }

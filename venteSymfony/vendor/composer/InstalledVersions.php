@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '0ea6f17d2d700771e65b84dbb26f324f6fcc4884',
+    'reference' => '85fcf30d8109849dc4fea880dbdc84b0988a79c7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '0ea6f17d2d700771e65b84dbb26f324f6fcc4884',
+      'reference' => '85fcf30d8109849dc4fea880dbdc84b0988a79c7',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -51,6 +51,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '7413f0b55a051e89485c5cb9f765fe24bb02a7b6',
+    ),
+    'composer/semver' => 
+    array (
+      'pretty_version' => '3.2.4',
+      'version' => '3.2.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a02fdf930a3c1c3ed3a49b5f63859c0c20e10464',
+    ),
+    'composer/xdebug-handler' => 
+    array (
+      'pretty_version' => '1.4.5',
+      'version' => '1.4.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f28d44c286812c714741478d968104c5e604a1d4',
     ),
     'doctrine/annotations' => 
     array (
@@ -196,6 +214,15 @@ private static $installed = array (
       ),
       'reference' => 'ca90a3291eee1538cd48ff25163240695bd95448',
     ),
+    'friendsofphp/php-cs-fixer' => 
+    array (
+      'pretty_version' => 'v2.17.1',
+      'version' => '2.17.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5198b7308ed63f26799387fd7f3901c3db6bd7fd',
+    ),
     'laminas/laminas-code' => 
     array (
       'pretty_version' => '3.5.1',
@@ -256,6 +283,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f65ae0f9dcbdd9d6ad3abb721a9e09c3d7d868a4',
+    ),
+    'php-cs-fixer/diff' => 
+    array (
+      'pretty_version' => 'v1.3.1',
+      'version' => '1.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dbd31aeb251639ac0b9e7e29405c1441907f5759',
     ),
     'php-http/async-client-implementation' => 
     array (
@@ -796,6 +832,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '39d483bdf39be819deabf04ec872eb0b2410b531',
+    ),
+    'symfony/polyfill-php70' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5f03a781d984aae42cebd18e7912fa80f02ee644',
     ),
     'symfony/polyfill-php72' => 
     array (
